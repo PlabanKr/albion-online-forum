@@ -2,11 +2,16 @@ import React, { FunctionComponent } from "react";
 import { Navlink } from "./navlink";
 
 const SidebarItems = [
-  { title: "Should you go to black zone solo?", url: "/" },
-  { title: "Should you go to red zone solo?", url: "/" },
-  { title: "Should you do ganking solo?", url: "/" },
+  { title: "How to clear tier 5 dungeons fast?", url: "/" },
+  { title: "Which city you should choose?", url: "/" },
+  { title: "What is faction warfare?", url: "/" },
   { title: "Should you make a solo guild?", url: "/" },
-  { title: "How to min-max your profit in crafting?", url: "/" },
+  { title: "How to maximize your profit in crafting?", url: "/" },
+  {
+    title:
+      "What is the best gathering profession for someone who primarily lives in Lymhurst?",
+    url: "/",
+  },
 ];
 
 export const Sidebar: FunctionComponent = () => {

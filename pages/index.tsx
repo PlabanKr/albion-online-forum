@@ -17,6 +17,14 @@ export default function Home() {
         <p className="text-center text-lg pt-6">
           A community driven forum for Albion Online
         </p>
+        <div className="flex place-content-center p-10">
+          <button
+            className="text-white bg-orange-700 hover:bg-orange-500 py-4 px-8 font-semibold"
+            onClick={() => window.open("https://albiononline.com/en/home")}
+          >
+            Play Albion Online for free.
+          </button>
+        </div>
       </Layout>
     </>
   );
