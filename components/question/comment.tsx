@@ -1,29 +1,41 @@
 import React, { FunctionComponent } from "react";
 import { BiLike, BiDislike } from "react-icons/bi";
 
-export const Comment: FunctionComponent = () => {
+interface Props {
+  comment: string;
+  cAuthor: string;
+  cDate: string;
+  likeCount: string;
+  owner: boolean;
+}
+
+export const Comment: FunctionComponent<Props> = ({
+  comment,
+  cAuthor,
+  cDate,
+  likeCount,
+  owner,
+}) => {
   return (
-    <div className="flex">
-      <div className="px-6 flex flex-col">
+    <div className="flex mb-4">
+      <div className="px-6 flex flex-col gap-2">
         <BiLike />
+        <p className="text-sm text-left">{likeCount}</p>
         <BiDislike />
       </div>
       <div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum numquam
-          voluptatibus magni magnam laborum ex. Dicta nesciunt blanditiis,
-          deserunt, aliquam magnam alias nostrum harum doloremque accusantium
-          sit dolor fuga culpa assumenda repudiandae provident dolorem! Dolores
-          vero omnis quo velit autem corporis sint iste laborum debitis, eum
-          fugit ratione repellat dolorem, quisquam adipisci exercitationem
-          ducimus ipsam numquam odit vel? Dolorem esse adipisci quod saepe aut.
-          Quibusdam distinctio adipisci neque labore vel magnam dolor tempore,
-          temporibus commodi. Eveniet obcaecati, at quod provident quo doloribus
-          eius laboriosam sapiente quis, debitis soluta mollitia pariatur
-          recusandae quasi non dolore exercitationem officia iusto dolores
-          dolorum? Amet.
+        <div>{comment}</div>
+        <div className="flex justify-between">
+          <p className="mt-2 text-sm text-neutral-500">Comment by: {cAuthor}</p>
+          <span className="flex gap-5">
+            <p className="mt-2 text-sm text-neutral-500">Date: {cDate}</p>
+            {owner ? (
+              <button className="mt-2 text-sm text-orange-700">edit</button>
+            ) : (
+              <></>
+            )}
+          </span>
         </div>
-        <p className="mt-2 text-sm text-neutral-500">Comment by: John</p>
       </div>
     </div>
   );
