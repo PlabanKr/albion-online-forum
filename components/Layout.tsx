@@ -4,14 +4,15 @@ import { Sidebar } from "./navigation/sidebar";
 
 interface Props {
   children: ReactNode;
+  haveSidebar: boolean;
 }
 
-export const Layout: FunctionComponent<Props> = ({ children }) => {
+export const Layout: FunctionComponent<Props> = ({ children, haveSidebar }) => {
   return (
     <>
       <Navbar />
       <div className="relative px-32 pt-8">
-        <Sidebar />
+        {haveSidebar ? <Sidebar /> : <></>}
         <section className="ml-80 px-4">{children}</section>
       </div>
     </>

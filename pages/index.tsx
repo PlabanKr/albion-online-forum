@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <Layout haveSidebar={true}>
         <p className="text-center text-5xl font-bold">
           Welcome to Albion Online Forum
         </p>
