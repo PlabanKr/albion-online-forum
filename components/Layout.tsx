@@ -13,7 +13,9 @@ export const Layout: FunctionComponent<Props> = ({ children, haveSidebar }) => {
       <Navbar />
       <div className="relative px-32 pt-8">
         {haveSidebar ? <Sidebar /> : <></>}
-        <section className="ml-80 px-4">{children}</section>
+        <section className={haveSidebar ? "ml-80 px-4" : "px-60"}>
+          {children}
+        </section>
       </div>
     </>
   );
